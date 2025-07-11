@@ -5,6 +5,6 @@
 </head>
 <body>
     <p>You're welcome</p>
-    <p>Your name is ${param.employeeName}</p>
+    <p>Your name is ${nameAttribute}</p>
 </body>
 </html>
