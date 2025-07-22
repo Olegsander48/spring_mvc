@@ -6,7 +6,33 @@
 
     <display-name>spring-course-mvc</display-name>
 
-    <absolute-ordering />
+    <!-- Обработка 404 ошибки -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/view/errors/notFound.jsp</location>
+    </error-page>
+
+    <!-- Обработка 500 ошибки -->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/view/errors/internalError.jsp</location>
+    </error-page>
+
+    <!-- Обработка NullPointerException -->
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/WEB-INF/view/errors/internalError.jsp</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>ErrorTestServlet</servlet-name>
+        <servlet-class>/servlets/ErrorTestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ErrorTestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>
