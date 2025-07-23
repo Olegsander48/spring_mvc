@@ -1,11 +1,15 @@
 package com.udemy.mvc.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @Size(min = 2, max = 50, message = "name must be 2+ symbols")
     private String name;
+    @NotBlank(message = "surname is required field")
     private String surname;
     private int salary;
     private String department;
