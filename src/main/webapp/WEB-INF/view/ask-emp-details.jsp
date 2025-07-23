@@ -13,7 +13,12 @@
         <br>
         Salary <form:input path="salary"/>
         <br>
+        Department <form:select path="department">
+        <form:options items="${employee.departments}"/>
+        </form:select>
+        <br>
         <input type="submit" value="OK">
+
     </form:form>
 </body>
 </html>
