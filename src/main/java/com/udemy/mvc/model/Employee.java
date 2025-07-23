@@ -1,5 +1,6 @@
 package com.udemy.mvc.model;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ public class Employee {
     private Map<String, String> departments;
     private String carBrand;
     private Map<String, String> carBrands;
+    private String[] languages;
 
     public Employee() {
         departments = new HashMap<>();
@@ -21,6 +23,14 @@ public class Employee {
         carBrands.put("BMW", "BMW");
         carBrands.put("Audi", "Audi");
         carBrands.put("MB", "Mercedes-Benz");
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
     }
 
     public Map<String, String> getCarBrands() {
@@ -86,6 +96,10 @@ public class Employee {
                 + ", surname='" + surname + '\''
                 + ", salary=" + salary
                 + ", department='" + department + '\''
+                + ", departments=" + departments
+                + ", carBrand='" + carBrand + '\''
+                + ", carBrands=" + carBrands
+                + ", languages=" + Arrays.toString(languages)
                 + '}';
     }
 }
