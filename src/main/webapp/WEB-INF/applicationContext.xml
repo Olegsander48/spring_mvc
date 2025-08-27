@@ -27,9 +27,12 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="org.postgresql.Driver" />
-        <property name="jdbcUrl" value="jdbc:postgres://localhost:5432/spring_course?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/spring_course" />
         <property name="user" value="postgres" />
         <property name="password" value="password" />
+        <property name="initialPoolSize" value="5" />
+        <property name="minPoolSize" value="5" />
+        <property name="maxPoolSize" value="20" />
     </bean>
 
     <bean id="sessionFactory"
