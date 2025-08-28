@@ -5,5 +5,7 @@ import com.udemy.mvc.hibernate.entity.Employee;
 import java.util.List;
 
 public interface EmployeeDao {
-    public List<Employee> findAll();
+    List<Employee> findAll();
+
+    void saveEmployee(Employee employee);
 }
