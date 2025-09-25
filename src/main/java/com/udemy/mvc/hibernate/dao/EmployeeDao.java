@@ -10,4 +10,6 @@ public interface EmployeeDao {
     void saveEmployee(Employee employee);
 
     Employee findById(int id);
+
+    void remove(int id);
 }
