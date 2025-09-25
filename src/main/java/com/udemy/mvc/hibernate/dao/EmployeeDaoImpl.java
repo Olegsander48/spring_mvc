@@ -21,7 +21,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public void saveEmployee(Employee employee) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.save(employee);
+        session.saveOrUpdate(employee);
+    }
+
+    @Override
+    public Employee findById(int id) {
+        return sessionFactory.getCurrentSession().get(Employee.class, id);
     }
 
 }
