@@ -1,5 +1,7 @@
 package com.udemy.mvc.model;
 
+import com.udemy.mvc.validation.CheckEmail;
+
 import javax.validation.constraints.*;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,6 +24,9 @@ public class Employee {
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Please use pattern XXX-XX-XX")
     private String phoneNumber;
 
+    @CheckEmail
+    private String email;
+
     public Employee() {
         departments = new HashMap<>();
         departments.put("IT", "Information Technology");
@@ -31,6 +36,14 @@ public class Employee {
         carBrands.put("BMW", "BMW");
         carBrands.put("Audi", "Audi");
         carBrands.put("MB", "Mercedes-Benz");
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhoneNumber() {

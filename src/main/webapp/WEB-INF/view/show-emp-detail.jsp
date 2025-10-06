@@ -18,5 +18,6 @@
         </c:forEach>
     </ul>
     <p>Phone number ${employee.phoneNumber}</p>
+    <p>email ${employee.email}</p>
 </body>
 </html>
