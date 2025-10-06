@@ -17,5 +17,6 @@
             <li>${lang}</li>
         </c:forEach>
     </ul>
+    <p>Phone number ${employee.phoneNumber}</p>
 </body>
 </html>

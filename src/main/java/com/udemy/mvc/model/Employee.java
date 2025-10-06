@@ -1,7 +1,6 @@
 package com.udemy.mvc.model;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +10,17 @@ public class Employee {
     private String name;
     @NotBlank(message = "surname is required field")
     private String surname;
+    @Min(value = 500, message = "Must be greater than 499")
+    @Max(value = 1000, message = "Must be less than 1001")
     private int salary;
     private String department;
     private Map<String, String> departments;
     private String carBrand;
     private Map<String, String> carBrands;
     private String[] languages;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Please use pattern XXX-XX-XX")
+    private String phoneNumber;
 
     public Employee() {
         departments = new HashMap<>();
@@ -27,6 +31,14 @@ public class Employee {
         carBrands.put("BMW", "BMW");
         carBrands.put("Audi", "Audi");
         carBrands.put("MB", "Mercedes-Benz");
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String[] getLanguages() {
